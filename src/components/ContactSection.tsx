@@ -5,6 +5,19 @@ import { FormEvent } from 'react'
 export default function ContactSection() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const name = formData.get('name') as string
+    const email = formData.get('email') as string
+    const message = formData.get('message') as string
+
+    const mailtoLink = `mailto:lakithravindu55@gmail.com?subject=Contact from ${encodeURIComponent(
+      name
+    )}&body=${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(
+      email
+    )}`
+
+    window.location.href = mailtoLink
   }
 
   return (
@@ -33,8 +46,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-[0.7rem] font-semibold uppercase tracking-wide text-[#4f8fc0]">Email</p>
-                <a href="mailto:researchmedisense@gmail.com" className="text-[0.9rem] text-white hover:text-[#1aa5a5] transition-colors mt-0.5 block break-all">
-                  researchmedisense@gmail.com
+                <a href="mailto:lakithravindu55@gmail.com" className="text-[0.9rem] text-white hover:text-[#1aa5a5] transition-colors mt-0.5 block break-all">
+                  lakithravindu55@gmail.com
                 </a>
               </div>
             </div>
@@ -68,16 +81,16 @@ export default function ContactSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-[0.72rem] font-semibold text-[#4f6079] mb-1.5 uppercase tracking-wide">Name</label>
-                <input type="text" placeholder="Your name" className="form-input" />
+                <input type="text" name="name" placeholder="Your name" className="form-input" />
               </div>
               <div>
                 <label className="block text-[0.72rem] font-semibold text-[#4f6079] mb-1.5 uppercase tracking-wide">Email</label>
-                <input type="email" placeholder="your@email.com" className="form-input" />
+                <input type="email" name="email" placeholder="your@email.com" className="form-input" />
               </div>
             </div>
             <div>
               <label className="block text-[0.72rem] font-semibold text-[#4f6079] mb-1.5 uppercase tracking-wide">Message</label>
-              <textarea placeholder="Message or Query" rows={5} className="form-input resize-y min-h-[120px]" />
+              <textarea name="message" placeholder="Message or Query" rows={5} className="form-input resize-y min-h-[120px]" />
             </div>
             <button
               type="submit"

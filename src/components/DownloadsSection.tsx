@@ -1,15 +1,15 @@
 const documents = [
   
   { name: 'TAF Document', href: '/files/TAF_Document.placeholder.docx' },
-  { name: 'Project Proposal', href: '#' },
+  { name: 'Project Proposal', href: '/files/project_proposals.zip' },
   { name: 'Research Paper', href: '/files/AI_Driven_Diabetes_Hypertension_Prevention_2026.pdf' },
   { name: 'Final Report', href: '#' },
 ]
 
 const presentations = [
   { name: 'Proposal Presentation', href: '#' },
-  { name: 'Progress Presentation I', href: '/files/pp1_Presentation.pptx' },
-  { name: 'Progress Presentation II', href: '/files/pp2_Presentation.pptx' },
+  { name: 'Progress Presentation I', href: '/files/pp1_presentation.pptx' },
+  { name: 'Progress Presentation II', href: '/files/PP2_Presentation.pptx' },
   { name: 'Final Presentation', href: '#' },
 ]
 
